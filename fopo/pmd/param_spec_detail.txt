@@ -1,0 +1,64 @@
+{
+    "eval": {
+        "abbrv": "ctd", // the potential choices are the keys in "eval_method" 
+        "eval_method":{
+            "independent_traj": "_independent_trajectories", 
+            "td": "_td",
+            "ctd": "_ctd",
+            "ftd": "_ftd",
+            "vrtd": "_vrtd",
+            "evrtd": "_evrtd"
+        },
+        "independent_traj": {
+            "traj_length": 40,
+            "num_traj": 1
+        },
+        "ctd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 30000,
+            "tau": 3,
+            "n_t": 1,
+            "mu": 0.1,
+            "eta": 1.0
+        },
+        "ftd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 30000,
+            "tau": 3,
+            "n_t": 1,
+            "mu": 0.1,
+            "eta": 1.0
+        },
+        "vrtd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 30000,
+            "tau": 3,
+            "tau_prime": 3,
+            "eta": 0.1
+        }
+    },
+    "opt":{
+        "steps": 32,
+        "divergence": "tsallis", // the potential options are the keys in the "update_method"
+        "update_method": {
+            "kl": "prox_update_kl",
+            "tsallis": "prox_update_tsallis"
+        },
+        "kl": {
+            "eta": 0.1,
+            "tau": 0.0
+        },
+        "tsallis": {
+            "eta": 0.1,
+            "index": 0.5,
+            "tol": 0.001
+        }
+    },
+    "feature_spec": {
+        "feature_name": "identity", // the potential options include "fourier, stump, identity"
+        "num_features": 500
+    }
+}

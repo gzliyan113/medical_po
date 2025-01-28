@@ -1,0 +1,7 @@
+gymnasium
+torch
+pandas
+streamlit
+numpy 
+numdifftools
+autograd

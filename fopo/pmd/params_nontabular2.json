@@ -1,0 +1,72 @@
+{
+    "eval": {
+        "abbrv": "vrftd",
+        "eval_method":{
+            "td": "_td",
+            "ctd": "_ctd",
+            "ftd": "_ftd",
+            "vrtd": "_vrtd",
+            "vrftd": "_vrftd"
+        },
+        "ctd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 3000,
+            "tau": 3,
+            "n_t": 1,
+            "mu": 0.1,
+            "eta": 1.0
+        },
+        "ftd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 3000,
+            "tau": 3,
+            "n_t": 1,
+            "mu": 0.1,
+            "eta": 1.0
+        },
+        "vrtd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 4000,
+            "tau": 1,
+            "tau_prime": 1,
+            "eta": 1.0
+        },
+        "vrftd": {
+            "discount_or_average": true, 
+            "explore": false,
+            "trajectory_len": 4000,
+            "tau": 5,
+            "tau_prime": 3,
+            "eta": 1.31425697256084,
+            "lambd": 1.0,
+            "K": 45,
+            "N_k": 187,
+            "n_t": 1
+        }
+    },
+    "opt":{
+        "solve_mode": "linear",
+        "steps": 10,
+        "divergence": "kl",
+        "update_method": {
+            "kl": "prox_update_kl",
+            "tsallis": "prox_update_tsallis"
+        },
+        "kl": {
+            "eta": 1.2065113115882262,
+            "tau": 0.0
+        },
+        "tsallis": {
+            "eta": 0.1,
+            "index": 0.5,
+            "tol": 0.001
+        }
+    },
+    "feature_spec": {
+        "feature_name": "fourier",
+        "num_features": 2000
+    }
+}
